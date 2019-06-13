@@ -35,10 +35,10 @@ int main(int argc, char **argv)
 {
   int a, b, c, wynik;
   printf("a - POLE PROSTOKATA | b - POLE TRÓJKATA | c - ls -l \n");
-  char liczba = getoptChar(argc, argv), command[50], opcja;
+  char liczba = getoptChar(argc, argv), command[100], opcja;
 
-  char folder[50];
-  char mk[50];
+  char folder[100];
+  char mk[100];
   if (liczba == 'a')
   {
     printf("WYBIERZ ZADANIE: ");
@@ -56,6 +56,21 @@ int main(int argc, char **argv)
       printf("POLE TRÓJKATA: ");
       wynik = trojkat(a, b);
       break;
+    case 'c':
+      strcpy(command, "ls -l");
+      system(command);
+      return 0;
+    default:
+      printf("%s\n", "COS POSZLO NIE TAK!");
+      return -1;
+    }
+  }
+  if (liczba == 'b')
+  {
+    printf("WYBIERZ C: ");
+    scanf("%s", &opcja);
+    switch (opcja)
+    {
     case 'c':
       strcpy(command, "ls -l");
       system(command);
