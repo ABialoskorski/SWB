@@ -3,7 +3,7 @@ SRCS:=main.c
 
 exe = main.exe
 main: main.o lib.a
-	@$(CC) main.o lib/lib.a -o $(exe)
+	@$(CC) $< lib/lib.a -o $(exe)
 main.o: $(SRCS)
 	@$(CC) -c $(SRCS)
 lib.a:
